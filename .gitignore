@@ -4,3 +4,4 @@ site/node_modules/
 site/dist/
 *.log
 .DS_Store
+/db.json

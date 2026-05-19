@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "backend": "node node_modules/.bin/json-server --watch backend/db.json --port 3000",
-    "frontend": "cd site && npx ng serve --open",
+    "backend": "node backend/server.js",
+    "frontend": "cd site && npx ng serve --proxy-config proxy.conf.json --open",
     "start": "echo 'Run in separate terminals: npm run backend & npm run frontend'"
   },
   "dependencies": {

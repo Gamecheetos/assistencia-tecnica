@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterOutlet, Router } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 
 @Component({
@@ -9,4 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {}
+export class App {
+  router = inject(Router);
+  get isHome() { return this.router.url === '/'; }
+}
