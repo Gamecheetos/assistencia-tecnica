@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, ActivatedRoute } from '@angular/router';
 import { ClientesService } from '../../core/services/clientes.service';
 import { Cliente } from '../../core/types/types';
 
@@ -89,8 +89,11 @@ import { Cliente } from '../../core/types/types';
 export class ListagemClienteComponent implements OnInit {
   lista: Cliente[] = [];
   erro = '';
-  constructor(private service: ClientesService) {}
-  ngOnInit() { this.carregar(); }
+  constructor(private service: ClientesService, private route: ActivatedRoute) {}
+  ngOnInit() {
+    this.carregar();
+    this.route.queryParams.subscribe(() => this.carregar());
+  }
   carregar() {
     this.erro = '';
     this.service.listar().subscribe({
