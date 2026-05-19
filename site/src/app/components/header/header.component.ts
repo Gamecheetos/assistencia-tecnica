@@ -14,19 +14,21 @@ import { RouterModule } from '@angular/router';
         </a>
         <nav class="nav">
           <div class="dropdown">
-            <a class="nav-link" routerLink="/funcionarios" routerLinkActive="active">Funcionários</a>
+            <span class="nav-link dropdown-trigger">Menu</span>
             <div class="dropdown-content">
-              <a routerLink="/funcionarios" routerLinkActive="active">Listar</a>
-              <a routerLink="/funcionarios/cadastrar" routerLinkActive="active">Cadastrar</a>
-              <a routerLink="/funcionarios/consultar" routerLinkActive="active">Consultar</a>
-            </div>
-          </div>
-          <div class="dropdown">
-            <a class="nav-link" routerLink="/clientes" routerLinkActive="active">Clientes</a>
-            <div class="dropdown-content">
-              <a routerLink="/clientes" routerLinkActive="active">Listar</a>
-              <a routerLink="/clientes/cadastrar" routerLinkActive="active">Cadastrar</a>
-              <a routerLink="/clientes/consultar" routerLinkActive="active">Consultar</a>
+              <div class="dropdown-group">
+                <span class="dropdown-label">Clientes</span>
+                <a routerLink="/clientes" routerLinkActive="active">Listar</a>
+                <a routerLink="/clientes/cadastrar" routerLinkActive="active">Cadastrar</a>
+                <a routerLink="/clientes/consultar" routerLinkActive="active">Consultar</a>
+              </div>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-group">
+                <span class="dropdown-label">Funcionários</span>
+                <a routerLink="/funcionarios" routerLinkActive="active">Listar</a>
+                <a routerLink="/funcionarios/cadastrar" routerLinkActive="active">Cadastrar</a>
+                <a routerLink="/funcionarios/consultar" routerLinkActive="active">Consultar</a>
+              </div>
             </div>
           </div>
         </nav>
@@ -54,6 +56,7 @@ import { RouterModule } from '@angular/router';
     }
     .accent { color: var(--primary); }
     .nav { display: flex; gap: 4px; }
+    .dropdown-trigger { cursor: pointer; user-select: none; }
     .nav-link {
       padding: 8px 16px;
       color: var(--text-muted); text-decoration: none;
@@ -83,6 +86,13 @@ import { RouterModule } from '@angular/router';
     }
     .dropdown-content a:hover { background: var(--surface-hover); color: var(--text); }
     .dropdown-content a.active { color: var(--primary); background: rgba(59,130,246,.1); }
+    .dropdown-group { padding: 2px 0; }
+    .dropdown-label {
+      display: block; padding: 6px 14px 4px;
+      font-size: .7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .06em; color: var(--text-muted); opacity: .6;
+    }
+    .dropdown-divider { height: 1px; background: var(--border); margin: 4px 8px; }
     .dropdown:hover .dropdown-content { display: block; }
   `]
 })
