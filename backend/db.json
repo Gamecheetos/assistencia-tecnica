@@ -1,0 +1,41 @@
+{
+  "funcionarios": [
+    {
+      "id": 1,
+      "nome": "João Silva",
+      "cargo": "Técnico",
+      "telefone": "11999999999",
+      "email": "joao@email.com"
+    },
+    {
+      "id": 2,
+      "nome": "Maria Souza",
+      "cargo": "Atendente",
+      "telefone": "11988888888",
+      "email": "maria@email.com"
+    },
+    {
+      "nome": "Teste",
+      "cargo": "Dev",
+      "telefone": "111",
+      "email": "t@t.com",
+      "id": 3
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Carlos Santos",
+      "email": "carlos@email.com",
+      "telefone": "11977777777",
+      "endereco": "Rua A, 123"
+    },
+    {
+      "id": 2,
+      "nome": "Ana Oliveira",
+      "email": "ana@email.com",
+      "telefone": "11966666666",
+      "endereco": "Rua B, 456"
+    }
+  ]
+}
